@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "SerialTransfer.h"
 
 
@@ -8,7 +9,7 @@ struct __attribute__((packed)) STRUCT {
   double y;
 } testStruct;
 
-char arr[] = "hello";
+char arr[] = "mello";
 
 
 void setup()
@@ -16,7 +17,7 @@ void setup()
   Serial.begin(115200);
   myTransfer.begin(Serial);
 
-  testStruct.z = '$';
+  testStruct.z = '(';
   testStruct.y = 4.5;
 }
 
@@ -35,5 +36,5 @@ void loop()
 
   ///////////////////////////////////////// Send buffer
   myTransfer.sendData(sendSize);
-  delay(500);
+  delay(5);
 }
